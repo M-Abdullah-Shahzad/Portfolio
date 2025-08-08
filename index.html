@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Abdullah Shahzad | Data Science Intern</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0d1b2a, #1b263b, #2ec4b6);
+      color: #fff;
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      border-radius: 15px;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .sidebar {
+      background: rgba(255, 255, 255, 0.07);
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      backdrop-filter: blur(12px);
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .sidebar .image {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background-image: url('ab.jpg');
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      margin-bottom: 20px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .sidebar .image:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 25px #2ec4b6;
+    }
+
+    .sidebar .name {
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .sidebar .title {
+      font-size: 16px;
+      color: #2ec4b6;
+      margin-bottom: 20px;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 1.5s steps(25);
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    .contact-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 0;
+    }
+
+    .contact-icons a {
+      font-size: 20px;
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    .contact-icons a:hover {
+      transform: translateY(-5px) scale(1.15);
+      box-shadow: 0 0 20px #2ec4b6;
+      color: #2ec4b6;
+    }
+
+    .main {
+      padding: 30px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.5s ease-out;
+    }
+
+    .section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section h2 {
+      font-size: 20px;
+      color: #2ec4b6;
+      border-bottom: 2px solid rgba(255,255,255,0.2);
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section h2 i {
+      color: #2ec4b6;
+      font-size: 18px;
+    }
+
+    .section p {
+      line-height: 1.6;
+      color: #f1f2f6;
+    }
+
+    .section ul {
+      list-style: none;
+    }
+
+    .section ul li {
+      margin-bottom: 8px;
+      color: #f1f2f6;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="sidebar">
+      <div class="image"></div>
+      <div class="name">Muhammad Abdullah Shahzad</div>
+      <div class="title">Data Science Intern</div>
+      <div class="contact-icons">
+        <a href="#" title="Phone" onclick="showPhone(event)"><i class="fas fa-phone"></i></a>
+        <a href="#" title="Email" onclick="showEmail(event)"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/Abdullah17521" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/muhammad-abdullah-shahzad-64b1082aa" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="section">
+        <h2><i class="fas fa-user"></i> About Me</h2>
+        <p>
+          I am a passionate and dedicated Data Science student currently pursuing my Bachelor's degree at the University of Central Punjab (2023–2027). With a strong foundation in programming languages like Python, C++, and SQL, I enjoy solving real-world problems using data.
+          <br><br>
+          My interests include data analysis, statistical modeling, and machine learning. I have worked on various projects such as predicting house prices, customer churn, and building management systems using both programming and database tools.
+          <br><br>
+          I am continuously improving my skills through certifications like "AI for Everyone" by DeepLearning.AI. I am eager to contribute to innovative data-driven projects and grow in the field of Artificial Intelligence and Data Science.
+        </p>
+      </div>
+
+      <div class="section">
+        <h2><i class="fas fa-certificate"></i> Certifications</h2>
+        <ul>
+          <li>DeepLearning.AI – AI for Everyone</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2><i class="fas fa-code"></i> Skills</h2>
+        <ul>
+          <li>C++, Python, SQL</li>
+          <li>NumPy, Pandas, Matplotlib</li>
+          <li>Data Visualization & Analysis</li>
+          <li>Machine Learning, Confusion Matrix</li>
+          <li>Statistical Modeling</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+        <ul>
+          <li>Predicting House Prices using Linear Regression</li>
+          <li>Predicting Customer Churn using Logistic Regression</li>
+          <li>Predicting Diabetes using Logistic Regression</li>
+          <li>Management System of Quiz Record (SQL)</li>
+          <li>Student Management System (C++)</li>
+          <li>Employee Payroll System (C++)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showEmail(e) {
+      e.preventDefault();
+      const email = "abdullahrana5677@gmail.com";
+      if (confirm("Email: " + email + "\n\nClick OK to compose an email.")) {
+        window.location.href = "mailto:" + email;
+      }
+    }
+
+    function showPhone(e) {
+      e.preventDefault();
+      const phone = "03705751708";
+      if (confirm("Phone: " + phone + "\n\nClick OK to call this number.")) {
+        window.location.href = "tel:" + phone;
+      }
+    }
+
+    const sections = document.querySelectorAll('.section');
+    window.addEventListener('scroll', () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < triggerBottom) {
+          sec.classList.add('show');
+        }
+      });
+    });
+    window.dispatchEvent(new Event('scroll'));
+  </script>
+
+</body>
+</html>
