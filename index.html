@@ -2,239 +2,354 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Muhammad Abdullah Shahzad | AI Engineer & Data Science</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Muhammad Abdullah Shahzad — AI engineering, agentic AI, RAG systems, applied machine learning, and automation projects.">
+  <meta property="og:title" content="Muhammad Abdullah Shahzad | AI Engineer">
+  <meta property="og:description" content="Selected work in agentic AI, RAG, computer vision, applied machine learning, and data engineering.">
+  <meta property="og:type" content="website">
+  <title>Muhammad Abdullah Shahzad | AI Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Roboto', sans-serif;
+    :root {
+      color-scheme: dark;
+      --bg: #0b1020;
+      --surface: #111a2e;
+      --surface-2: #151f36;
+      --text: #edf2ff;
+      --muted: #a7b3ca;
+      --line: rgba(173, 190, 220, .16);
+      --accent: #7dd3fc;
+      --accent-2: #a5b4fc;
+      --max: 1120px;
     }
 
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
-      background: linear-gradient(135deg, #0d1b2a, #1b263b, #2ec4b6);
-      color: #fff;
-      padding: 40px;
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 78% 5%, rgba(56, 93, 173, .22), transparent 34rem),
+        radial-gradient(ellipse at 5% 38%, rgba(14, 116, 144, .13), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.65;
     }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      border-radius: 15px;
-      overflow: hidden;
-      backdrop-filter: blur(12px);
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(11, 16, 32, .84);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(16px);
     }
-
-    .sidebar {
-      background: rgba(255, 255, 255, 0.07);
-      padding: 30px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      backdrop-filter: blur(12px);
-      border-right: 1px solid rgba(255, 255, 255, 0.1);
+    .nav {
+      min-height: 72px; display: flex; align-items: center;
+      justify-content: space-between; gap: 24px;
     }
-
-    .sidebar .image {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      background-image: url('ab.jpg');
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-      margin-bottom: 20px;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    .brand {
+      text-decoration: none; font-family: "Space Grotesk", sans-serif;
+      font-weight: 700; letter-spacing: -.04em; font-size: 1.05rem;
     }
-    .sidebar .image:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 25px #2ec4b6;
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .nav-links a {
+      color: var(--muted); text-decoration: none; font-size: .9rem;
+      transition: color .2s ease;
     }
-
-    .sidebar .name {
-      font-size: 22px;
-      font-weight: bold;
+    .nav-links a:hover { color: var(--text); }
+    .hero { padding: 92px 0 76px; }
+    .hero-grid {
+      display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(220px, .55fr);
+      gap: 56px; align-items: center;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px;
+      color: var(--accent); text-transform: uppercase;
+      letter-spacing: .14em; font-weight: 700; font-size: .75rem;
+    }
+    .eyebrow::before {
+      content: ""; width: 24px; height: 1px; background: var(--accent);
+    }
+    h1, h2, h3 { font-family: "Space Grotesk", sans-serif; line-height: 1.15; }
+    h1 {
+      font-size: clamp(2.6rem, 6vw, 4.8rem); letter-spacing: -.065em;
+      max-width: 780px; margin: 20px 0;
+    }
+    h1 span {
+      background: linear-gradient(100deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero-copy { color: var(--muted); max-width: 690px; font-size: 1.08rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 46px; padding: 0 18px; border-radius: 10px;
+      border: 1px solid var(--line); text-decoration: none; font-weight: 700;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); border-color: rgba(125, 211, 252, .6); }
+    .button.primary {
+      color: #081221; background: linear-gradient(100deg, var(--accent), #a5d8ff);
+      border-color: transparent;
+    }
+    .button.secondary { color: var(--text); background: rgba(255,255,255,.03); }
+    .profile-card {
+      border: 1px solid var(--line); border-radius: 24px; padding: 24px;
+      background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.025));
+      box-shadow: 0 28px 70px rgba(0,0,0,.24);
       text-align: center;
-      margin-bottom: 5px;
     }
-
-    .sidebar .title {
-      font-size: 16px;
-      color: #2ec4b6;
-      margin-bottom: 20px;
-      white-space: nowrap;
-      overflow: hidden;
-      animation: typing 1.5s steps(25);
+    .avatar {
+      width: 150px; height: 150px; object-fit: cover; border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.18); margin: 4px auto 18px;
+      display: block;
     }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
+    .profile-card strong { display: block; font-family: "Space Grotesk", sans-serif; }
+    .profile-card p { margin: 5px 0 0; color: var(--muted); font-size: .9rem; }
+    .profile-meta {
+      display: flex; justify-content: center; flex-wrap: wrap;
+      gap: 8px; margin-top: 18px;
     }
-
-    .contact-icons {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-top: 0;
+    .pill {
+      border: 1px solid var(--line); border-radius: 999px;
+      color: #c9d7ed; padding: 5px 10px; font-size: .77rem;
     }
-
-    .contact-icons a {
-      font-size: 20px;
-      text-decoration: none;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 45px;
-      height: 45px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      transition: all 0.3s ease;
+    section { padding: 62px 0; border-top: 1px solid var(--line); }
+    .section-head {
+      display: flex; justify-content: space-between; align-items: end;
+      gap: 24px; margin-bottom: 28px;
     }
-
-    .contact-icons a:hover {
-      transform: translateY(-5px) scale(1.15);
-      box-shadow: 0 0 20px #2ec4b6;
-      color: #2ec4b6;
+    .section-head h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.045em; margin: 10px 0 0; }
+    .section-head p { color: var(--muted); max-width: 460px; margin: 0; }
+    .about-grid { display: grid; grid-template-columns: 1.3fr .7fr; gap: 28px; }
+    .panel {
+      border: 1px solid var(--line); border-radius: 18px;
+      background: rgba(17,26,46,.78); padding: 25px;
     }
-
-    .main {
-      padding: 30px;
+    .panel p { color: var(--muted); margin: 0 0 14px; }
+    .panel p:last-child { margin-bottom: 0; }
+    .focus-list { display: grid; gap: 14px; }
+    .focus-item { padding-bottom: 13px; border-bottom: 1px solid var(--line); }
+    .focus-item:last-child { padding: 0; border: 0; }
+    .focus-item strong { display: block; font-size: .95rem; }
+    .focus-item span { color: var(--muted); font-size: .87rem; }
+    .project-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+    .project {
+      min-height: 240px; display: flex; flex-direction: column;
+      border: 1px solid var(--line); border-radius: 18px;
+      padding: 24px; background: linear-gradient(150deg, var(--surface-2), rgba(17,26,46,.72));
+      transition: transform .2s ease, border-color .2s ease;
     }
-
-    .section {
-      margin-bottom: 30px;
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.5s ease-out;
+    .project:hover { transform: translateY(-4px); border-color: rgba(125,211,252,.48); }
+    .project-top { display: flex; justify-content: space-between; gap: 14px; align-items: start; }
+    .project-index { color: var(--accent); font-family: "Space Grotesk", sans-serif; font-size: .82rem; }
+    .project h3 { font-size: 1.28rem; letter-spacing: -.025em; margin: 12px 0 9px; }
+    .project p { color: var(--muted); margin: 0 0 19px; font-size: .94rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; }
+    .tags span {
+      border-radius: 7px; background: rgba(125,211,252,.08);
+      color: #c5e9fb; padding: 4px 8px; font-size: .74rem;
     }
-
-    .section.show {
-      opacity: 1;
-      transform: translateY(0);
+    .project a { margin-top: 18px; color: var(--accent); text-decoration: none; font-weight: 700; font-size: .9rem; }
+    .project a:hover { text-decoration: underline; }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; }
+    .skill-group h3 { font-size: 1rem; margin: 0 0 11px; }
+    .skill-group p { color: var(--muted); margin: 0; font-size: .9rem; }
+    .contact {
+      border: 1px solid var(--line); border-radius: 22px;
+      padding: clamp(24px, 5vw, 42px);
+      background: linear-gradient(115deg, rgba(28,50,87,.82), rgba(17,26,46,.8));
+      display: flex; justify-content: space-between; align-items: center; gap: 24px;
     }
-
-    .section h2 {
-      font-size: 20px;
-      color: #2ec4b6;
-      border-bottom: 2px solid rgba(255,255,255,0.2);
-      padding-bottom: 5px;
-      margin-bottom: 10px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .contact h2 { margin: 0 0 10px; font-size: clamp(1.6rem, 3vw, 2.2rem); }
+    .contact p { color: var(--muted); margin: 0; max-width: 570px; }
+    footer { padding: 28px 0 38px; color: var(--muted); font-size: .85rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    @media (max-width: 820px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+      .profile-card { max-width: 360px; text-align: left; }
+      .avatar { margin-left: 0; }
+      .profile-meta { justify-content: flex-start; }
+      .about-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
     }
-
-    .section h2 i {
-      color: #2ec4b6;
-      font-size: 18px;
+    @media (max-width: 600px) {
+      .wrap { width: min(var(--max), calc(100% - 28px)); }
+      .nav { padding: 14px 0; align-items: flex-start; flex-direction: column; gap: 10px; }
+      .nav-links { gap: 15px; }
+      .hero { padding: 60px 0 48px; }
+      section { padding: 48px 0; }
+      .section-head { align-items: flex-start; flex-direction: column; }
+      .project-grid, .skills-grid { grid-template-columns: 1fr; }
+      .contact { align-items: flex-start; flex-direction: column; }
     }
-
-    .section p {
-      line-height: 1.6;
-      color: #f1f2f6;
-    }
-
-    .section ul {
-      list-style: none;
-    }
-
-    .section ul li {
-      margin-bottom: 8px;
-      color: #f1f2f6;
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
-      .sidebar {
-        border-right: none;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-      }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
     }
   </style>
 </head>
 <body>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home">Abdullah<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-  <div class="container">
-    <div class="sidebar">
-      <div class="image"></div>
-      <div class="name">Muhammad Abdullah Shahzad</div>
-      <div class="title">AI Engineer · Agentic AI · RAG</div>
-      <div class="contact-icons">
-        <a href="https://github.com/M-Abdullah-Shahzad" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/muhammad-abdullah-shahzad-ai/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+  <main id="home">
+    <div class="hero wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">AI Engineering · Applied Machine Learning</div>
+          <h1>Building practical <span>AI systems</span> that solve real problems.</h1>
+          <p class="hero-copy">
+            I’m Muhammad Abdullah Shahzad, a BS Data Science student at the University of Central Punjab.
+            I work on agentic AI workflows, retrieval-augmented generation, applied machine learning,
+            computer vision, and data-driven applications.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">Explore selected work</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/muhammad-abdullah-shahzad-ai/" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+          </div>
+        </div>
+        <aside class="profile-card" aria-label="Profile">
+          <img class="avatar" src="ab.jpg" alt="Portrait of Muhammad Abdullah Shahzad">
+          <strong>Muhammad Abdullah Shahzad</strong>
+          <p>AI Engineer · Agentic AI · RAG · Applied ML</p>
+          <div class="profile-meta">
+            <span class="pill">Python</span>
+            <span class="pill">LangGraph</span>
+            <span class="pill">FastAPI</span>
+          </div>
+        </aside>
       </div>
     </div>
 
-    <div class="main">
-      <div class="section">
-        <h2><i class="fas fa-user"></i> About Me</h2>
-        <p>
-          I am a BS Data Science student at the University of Central Punjab (2023–2027), focused on building practical AI and machine-learning applications. My work spans agentic AI workflows, retrieval-augmented generation, computer vision, desktop automation, and data engineering.
-          <br><br>
-          I build with Python, LangChain, LangGraph, RAG, FastAPI, Streamlit, SQL, Kafka, Spark, and workflow automation tools. I prioritize working prototypes, clear architecture, reproducible setup, and honest evaluation over unsupported claims.
-          <br><br>
-          My current focus is AI engineering: developing useful assistants, multi-step AI workflows, and applied ML systems that solve concrete problems.
-        </p>
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">A little about my work</div><h2>From ideas to working applications.</h2></div>
+          <p>I value clear problem definition, practical implementation, reproducible setup, and honest reporting of what a project does and does not do.</p>
+        </div>
+        <div class="about-grid">
+          <div class="panel">
+            <p>
+              My projects span AI assistants, RAG-based applications, computer-vision pipelines,
+              machine-learning experiments, and data engineering workflows. I enjoy connecting
+              models and modern AI frameworks to useful interfaces, APIs, and automation.
+            </p>
+            <p>
+              I’m currently focused on strengthening my AI engineering practice: building reliable
+              workflows, improving software structure, and validating results instead of relying
+              on technology lists alone.
+            </p>
+          </div>
+          <div class="panel focus-list">
+            <div class="focus-item"><strong>Agentic AI & RAG</strong><span>Tool workflows, retrieval, LangChain, LangGraph</span></div>
+            <div class="focus-item"><strong>Applied AI & ML</strong><span>Computer vision, model pipelines, evaluation</span></div>
+            <div class="focus-item"><strong>Backend & Data</strong><span>FastAPI, SQL, Kafka, Spark, Streamlit</span></div>
+            <div class="focus-item"><strong>Automation</strong><span>Python integrations and n8n workflows</span></div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="section">
-        <h2><i class="fas fa-certificate"></i> Certifications</h2>
-        <ul>
-          <li>DeepLearning.AI – AI for Everyone</li>
-        </ul>
+    <section id="projects">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Selected portfolio</div><h2>Projects worth exploring.</h2></div>
+          <p>A focused selection across AI engineering, computer vision, machine learning, and data systems. Each link opens the source repository.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project">
+            <div class="project-top"><span class="project-index">01 / AI ENGINEERING</span><span class="pill">Flagship</span></div>
+            <h3>Atlas — Desktop AI Assistant</h3>
+            <p>A desktop assistant combining real-time voice interaction with practical tools for files, applications, browser tasks, and permission-aware actions.</p>
+            <div class="tags"><span>Gemini Live</span><span>Python</span><span>PyQt6</span><span>Automation</span></div>
+            <a href="https://github.com/M-Abdullah-Shahzad/Atlas-Desktop-Ai-Asistant-" target="_blank" rel="noopener noreferrer">View repository →</a>
+          </article>
+          <article class="project">
+            <div class="project-top"><span class="project-index">02 / COMPUTER VISION</span><span class="pill">Applied AI</span></div>
+            <h3>Smartphone Screen Inspection AI</h3>
+            <p>A computer-vision pipeline for phone and screen localization, perspective correction, defect segmentation, and inspection reporting.</p>
+            <div class="tags"><span>OpenCV</span><span>Segmentation</span><span>FastAPI</span><span>Python</span></div>
+            <a href="https://github.com/M-Abdullah-Shahzad/Smartphone-Screen-Inspection-AI" target="_blank" rel="noopener noreferrer">View repository →</a>
+          </article>
+          <article class="project">
+            <div class="project-top"><span class="project-index">03 / GENERATIVE AI</span><span class="pill">Agentic AI</span></div>
+            <h3>SentinAI — Code Review Assistant</h3>
+            <p>An AI-assisted code review workflow combining local parsing, reference retrieval, specialist LLM reviews, and structured reports.</p>
+            <div class="tags"><span>LangGraph</span><span>RAG</span><span>Python</span><span>Streamlit</span></div>
+            <a href="https://github.com/M-Abdullah-Shahzad/sentinai-multi-agent-code-auditor" target="_blank" rel="noopener noreferrer">View repository →</a>
+          </article>
+          <article class="project">
+            <div class="project-top"><span class="project-index">04 / DATA ENGINEERING</span><span class="pill">ETL</span></div>
+            <h3>Cartlow Incremental ETL</h3>
+            <p>An incremental pipeline that extracts MariaDB orders, transforms records, loads PostgreSQL, and supports scheduled execution.</p>
+            <div class="tags"><span>Python</span><span>MariaDB</span><span>PostgreSQL</span><span>APScheduler</span></div>
+            <a href="https://github.com/M-Abdullah-Shahzad/cartlow-etl-schedule" target="_blank" rel="noopener noreferrer">View repository →</a>
+          </article>
+          <article class="project">
+            <div class="project-top"><span class="project-index">05 / DATA & STREAMING</span><span class="pill">Analytics</span></div>
+            <h3>E-commerce Customer Analytics</h3>
+            <p>Customer analytics and machine-learning workflows, with a separate Kafka and Spark streaming demonstration.</p>
+            <div class="tags"><span>Kafka</span><span>Spark</span><span>Streamlit</span><span>ML</span></div>
+            <a href="https://github.com/M-Abdullah-Shahzad/AI-RealTime-Ecommerce-Analytics" target="_blank" rel="noopener noreferrer">View repository →</a>
+          </article>
+          <article class="project">
+            <div class="project-top"><span class="project-index">06 / MACHINE LEARNING</span><span class="pill">Cybersecurity</span></div>
+            <h3>Network Intrusion Detection</h3>
+            <p>An ML-based exploration of network traffic using UNSW-NB15 data and KNN, Naive Bayes, and K-Means approaches.</p>
+            <div class="tags"><span>Scikit-learn</span><span>UNSW-NB15</span><span>Streamlit</span><span>Python</span></div>
+            <a href="https://github.com/M-Abdullah-Shahzad/Network-Intrusion-Detection-System" target="_blank" rel="noopener noreferrer">View repository →</a>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <div class="section">
-        <h2><i class="fas fa-code"></i> Skills</h2>
-        <ul>
-          <li>Python, SQL, C++</li>
-          <li>Machine Learning, Deep Learning, Computer Vision</li>
-          <li>Generative AI, RAG, LangChain, LangGraph</li>
-          <li>FastAPI, Streamlit, REST APIs</li>
-          <li>Kafka, Spark, Pandas, NumPy</li>
-          <li>Docker, Git, n8n workflow automation</li>
-        </ul>
+    <section id="skills">
+      <div class="wrap">
+        <div class="section-head">
+          <div><div class="eyebrow">Technical toolkit</div><h2>Tools I work with.</h2></div>
+          <p>Grouped by the kind of work they support rather than presented as a long, unqualified list.</p>
+        </div>
+        <div class="skills-grid">
+          <div class="panel skill-group"><h3>Languages & Data</h3><p>Python, SQL, C++, Pandas, NumPy</p></div>
+          <div class="panel skill-group"><h3>AI & Machine Learning</h3><p>Scikit-learn, Deep Learning, Computer Vision, model evaluation</p></div>
+          <div class="panel skill-group"><h3>Generative & Agentic AI</h3><p>LLMs, RAG, LangChain, LangGraph, embeddings</p></div>
+          <div class="panel skill-group"><h3>Backend & Apps</h3><p>FastAPI, Streamlit, REST APIs</p></div>
+          <div class="panel skill-group"><h3>Data Engineering</h3><p>SQL databases, Kafka, Spark, ETL</p></div>
+          <div class="panel skill-group"><h3>Developer Tools</h3><p>Git, GitHub, Docker, n8n, Linux</p></div>
+        </div>
       </div>
+    </section>
 
-      <div class="section">
-        <h2><i class="fas fa-project-diagram"></i> Projects</h2>
-        <ul>
-          <li><a href="https://github.com/M-Abdullah-Shahzad/Atlas-Desktop-Ai-Asistant-" target="_blank" rel="noopener noreferrer">Atlas — Desktop AI Assistant</a></li>
-          <li><a href="https://github.com/M-Abdullah-Shahzad/Smartphone-Screen-Inspection-AI" target="_blank" rel="noopener noreferrer">Smartphone Screen Inspection AI</a></li>
-          <li><a href="https://github.com/M-Abdullah-Shahzad/sentinai-multi-agent-code-auditor" target="_blank" rel="noopener noreferrer">SentinAI — Multi-Agent Code Auditor</a></li>
-          <li><a href="https://github.com/M-Abdullah-Shahzad/cartlow-etl-schedule" target="_blank" rel="noopener noreferrer">Cartlow Incremental ETL Pipeline</a></li>
-          <li><a href="https://github.com/M-Abdullah-Shahzad/AI-RealTime-Ecommerce-Analytics" target="_blank" rel="noopener noreferrer">Real-Time E-commerce Analytics</a></li>
-          <li><a href="https://github.com/M-Abdullah-Shahzad/Network-Intrusion-Detection-System" target="_blank" rel="noopener noreferrer">Network Intrusion Detection System</a></li>
-        </ul>
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact">
+          <div>
+            <h2>Let’s connect.</h2>
+            <p>Interested in AI engineering, applied machine learning, and automation. Explore my repositories or connect with me professionally.</p>
+          </div>
+          <div class="hero-actions">
+            <a class="button primary" href="https://github.com/M-Abdullah-Shahzad" target="_blank" rel="noopener noreferrer">GitHub profile</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/muhammad-abdullah-shahzad-ai/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
+    </section>
+  </main>
 
-  <script>
-    const sections = document.querySelectorAll('.section');
-    window.addEventListener('scroll', () => {
-      const triggerBottom = window.innerHeight * 0.85;
-      sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if (top < triggerBottom) {
-          sec.classList.add('show');
-        }
-      });
-    });
-    window.dispatchEvent(new Event('scroll'));
-  </script>
-
+  <footer><div class="wrap"><span>Muhammad Abdullah Shahzad</span><span>Built with HTML and CSS · Portfolio source on GitHub</span></div></footer>
 </body>
 </html>
