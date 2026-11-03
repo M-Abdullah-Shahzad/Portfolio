@@ -20,6 +20,10 @@ The site is a static HTML/CSS page designed for recruiter and engineering-team r
 | E-commerce Customer Analytics | Customer analytics, ML, separate Kafka/Spark streaming demo | [View project](https://github.com/M-Abdullah-Shahzad/AI-RealTime-Ecommerce-Analytics) |
 | Network Intrusion Detection | UNSW-NB15, KNN, Naive Bayes, K-Means | [View project](https://github.com/M-Abdullah-Shahzad/Network-Intrusion-Detection-System) |
 
+## GitHub profile README
+
+`GITHUB_PROFILE_README.md` contains a concise profile README draft. To activate it on the GitHub profile, create a **public repository named exactly `M-Abdullah-Shahzad`** under the account and place the template content in that repository's root `README.md`.
+
 ## Preview locally
 
 No build system or package installation is required.
